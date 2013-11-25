@@ -1,0 +1,11 @@
+var fs = require('fs');
+var content = {};
+content.url = require('url');
+content.msgFileName = 'messages.json';
+content.messages = fs.existsSync(content.msgFileName) && JSON.parse(fs.readFileSync(content.msgFileName,"utf-8")) || [];
+content.detailsFileName = 'details.json';
+content.details = fs.existsSync(content.detailsFileName) && JSON.parse(fs.readFileSync(content.detailsFileName,"utf-8")) || {};
+content.chatPage = fs.readFileSync('./views/chat.jade',"utf-8");
+content.loginPage = fs.readFileSync('./views/login.jade','utf-8');
+content.querystring = require('querystring');
+exports.content = content;

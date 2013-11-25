@@ -1,0 +1,22 @@
+html
+head
+    title Homepage
+    form(name='login', action='/chat', method='post')
+      font(color='black', size='35')
+        center CONNECTING THOUGHTWORKERS
+      br
+      br
+      b
+        font(color='black', size='5')
+          | Username :
+          input(type='text', name='userid', required='true')
+          br
+          br
+          | Password :
+          input#password(type='password', name='password', required='true')
+          br
+          br
+          *** #{error}
+      center
+        input(type='submit', value='Login')
+      br

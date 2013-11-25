@@ -1,0 +1,35 @@
+
+html
+  head
+    style.
+      textarea.transbox
+      {
+      width:764px;
+      height:417px;
+      background-color:#ffffff;
+      border: solid black;
+      opacity:0.4;
+      }
+    title Server
+  body
+    form(name='myMessage', method='post')
+      a(href='/', style='float: right;') Sign Out
+      table
+        tr
+          td
+            b Your Login name:
+          td
+            input(type='text', name='name', value='{USERNAME}', readonly='readonly')
+        tr
+          td
+            b Your message:
+          td
+            textarea(rows='4', cols='100', name='message', required='true')
+      input(type='submit', value='Submit', formaction='/chat')
+      input(type='hidden', name='hidden', value='hidden')
+    hr
+    h2 Messages
+    b
+      i
+        font(size='5')
+          textarea.transbox {MESSAGES}
